@@ -1,0 +1,5 @@
+{"regex":"\"/as/g\"","links":[]}
+{"regex":"\"/instagram/g\"","links":[]}
+{"regex":"\"/ar/g\"","links":[{"url":"https://google.com/calendar"},{"url":"https://google.com/advanced_search"}]}
+{"regex":"\"/facebook\\.com%2F([^-]+)-/g\"","links":[]}
+{"regex":"\"/(a)/g\"","links":[{"url":"https://google.com/maps"},{"url":"https://google.com/mail/"},{"url":"https://google.com/calendar"},{"url":"https://google.com/advanced_search"},{"url":"https://google.com/language_tools"},{"url":"https://google.com/intl/en/about.html"},{"url":"https://google.com/setprefdomain"}]}

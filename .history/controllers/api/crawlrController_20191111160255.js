@@ -42,12 +42,11 @@ module.exports = {
   },
 
   postCrawlr(req, res) {
-    let reqData = {  // restructure input to conform to input names
+    let reqData = {
                     url:req.body.hostname,
-                    rex:req.body.regexes,
+                     rex:req.body.regexes,
                     depth:req.body.numLevels
                   };
-                  
     let regArray = reqData.rex.trim().split(','); //Convert comma separated string into an array
     for(let r of regArray){
       let regExGen = new RegExp(r, "g"); //RegEx flag set to global by default
