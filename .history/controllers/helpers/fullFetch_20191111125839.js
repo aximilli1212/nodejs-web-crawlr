@@ -11,7 +11,7 @@ const fetchLinks = dset =>{
     };
 
 return new Promise((resolve, reject) => {
-        rp(addHttp(dset.url))
+        rp(addHttpdset.url)
             .then(function(html) {
                 const retrievedUrls = [];
                 // fetch links as array with cheerio

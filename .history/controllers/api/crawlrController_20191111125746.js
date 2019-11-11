@@ -3,7 +3,7 @@ const fetchLinks = require('../helpers/fullFetch');
 const urlDepthSplit = require('../helpers/urlDepthSplit');
 const getUniqueLinks = require('../helpers/getUniqueLinks');
 const createNdjson = require('../helpers/createNdjson');
-const addHttp = require('../helpers/addHttp');
+const addHttp = require('./addHttp');
 
 // Init Event Emitter
 const em = new events.EventEmitter();

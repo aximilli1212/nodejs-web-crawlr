@@ -1,17 +1,16 @@
 const rp = require('request-promise');
 const $ = require('cheerio');
-const addHttp = require('./addHttp');
 
 //FIND ALL LINKS THAT MATCH THE GIVEN REGEX
 
 const fetchLinks = dset =>{
     const prepareLink = (ln)=>{
         // Trim and append domain to orphaned links eg:'/profile'
-        return ln.trim().startsWith('http') ? ln : `${addHttp(dset.url)}${ln}`;
+        return ln.trim().startsWith('http') ? ln : `${dset.url}${ln}`;
     };
 
 return new Promise((resolve, reject) => {
-        rp(addHttp(dset.url))
+        rp(dset.url)
             .then(function(html) {
                 const retrievedUrls = [];
                 // fetch links as array with cheerio

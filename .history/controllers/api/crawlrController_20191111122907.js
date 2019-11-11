@@ -3,14 +3,18 @@ const fetchLinks = require('../helpers/fullFetch');
 const urlDepthSplit = require('../helpers/urlDepthSplit');
 const getUniqueLinks = require('../helpers/getUniqueLinks');
 const createNdjson = require('../helpers/createNdjson');
-const addHttp = require('../helpers/addHttp');
 
 // Init Event Emitter
 const em = new events.EventEmitter();
 
   // Recursive Crawl webpages
   em.on('crawlHere',(dset)=>{
-    const DOMAIN = new URL(addHttp(dset.url)).origin;
+      if (!/^(?:f|ht)tps?\:\/\//.test(dset.url)) {
+          url = "http://" + url;
+      }
+      return url;
+
+    const DOMAIN = new URL(dset.url).origin;
     let dataSet = [];
     fetchLinks(dset).then(response =>{
         for(let i = 0; i <= dset.depth; i++){ //getting depth links

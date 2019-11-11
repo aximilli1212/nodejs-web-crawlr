@@ -7,11 +7,11 @@ const addHttp = require('./addHttp');
 const fetchLinks = dset =>{
     const prepareLink = (ln)=>{
         // Trim and append domain to orphaned links eg:'/profile'
-        return ln.trim().startsWith('http') ? ln : `${addHttp(dset.url)}${ln}`;
+        return ln.trim().startsWith('http') ? ln : `${dset.url}${ln}`;
     };
 
 return new Promise((resolve, reject) => {
-        rp(addHttp(dset.url))
+        rp(dset.url)
             .then(function(html) {
                 const retrievedUrls = [];
                 // fetch links as array with cheerio
